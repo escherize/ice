@@ -2,20 +2,20 @@
 
 A lightweight terminal color formatting library for Clojure.
 
-[![Clojars Project](https://img.shields.io/clojars/v/io.github.escherize/ice.svg)](https://clojars.org/io.github.escherize/ice)
+![Ice Library Logo](./resources/ice.png)
 
 ## Installation
 
 ### deps.edn
 
-```clojure
+``` clojure
 {:deps 
- {io.github.escherize/ice {:git/tag "v0.1.0" :git/sha "..."}}}
+ {io.github.escherize/ice {:git/sha "5c00afda8d70dc614fa22e6f3f46c6313523b307"}}}
 ```
 
 ## Usage
 
-```clojure
+``` clojure
 (require '[ice.core :as ice])
 
 ;; Basic colored output
@@ -31,10 +31,9 @@ A lightweight terminal color formatting library for Clojure.
 (ice/p [:red "Error: " [:bold "Operation failed"] " - please try again"])
 
 ;; Creating a color demo
-(ice/p (vec 
-        (mapcat (fn [color]
-                  [color (name color) " "]) 
-                [:red :green :blue :yellow :cyan :magenta])))
+(apply ice/p (vec 
+               (mapcat (fn [color] [color (name color) " "]) 
+                       (keys #'ice/colors))))
 
 ;; Getting colored string without printing (no newline added)
 (def colored-text (ice/p-str [:green "Success!"]))
@@ -54,7 +53,7 @@ A lightweight terminal color formatting library for Clojure.
 
 The `p` function prints colored text to `*out*`, always adding a newline at the end:
 
-```clojure
+``` clojure
 ;; Print red text
 (ice/p [:red "This is red"])
 

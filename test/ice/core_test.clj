@@ -6,7 +6,9 @@
 
 ;; Setup fixture for disabling/enabling colors in tests
 (defn color-fixture [f]
-  (f)  ; Run tests with colors enabled (default)
+  ;; Run tests with colors enabled (default)
+  (binding [ice/*disable-colors* false]
+    (f))
 
   ;; Re-run tests with colors disabled
   (binding [ice/*disable-colors* true]
