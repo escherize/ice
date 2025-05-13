@@ -2,7 +2,7 @@
 
 A lightweight terminal color formatting library for Clojure.
 
-![Ice Library Logo](./resources/ice.png)
+<img src="./resources/ice.png" alt="Ice Library Logo" width="200px">
 
 ## Installation
 
@@ -10,7 +10,7 @@ A lightweight terminal color formatting library for Clojure.
 
 ``` clojure
 {:deps 
- {io.github.escherize/ice {:git/sha "5c00afda8d70dc614fa22e6f3f46c6313523b307"}}}
+ {io.github.escherize/ice {:git/sha "d55522c8f3dd078499f0eb9869cb2ddcc7e57b29"}}}
 ```
 
 ## Usage
